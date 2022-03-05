@@ -4,13 +4,20 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  background-color: rgb(var(--light-surface));
+  color: rgb(var(--light-onSurface));
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: rgb(var(--light-primary));
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(var(--light-primary-variant));
+  text-decoration: underline;
 }

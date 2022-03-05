@@ -46,6 +46,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@makinox/makinox-ui@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@makinox/makinox-ui/-/makinox-ui-1.6.0.tgz#60c44dec942cbba11f656c7c013198759a18a7b1"
+  integrity sha512-rdiyVsaR85+QbECuDGal5pI1ZAb/nUMylX4NybGJrKaAElWCH3+UmVT6MuTpFFtbC+fFiX4RMihibf6S0QO4rg==
+  dependencies:
+    "@stitches/core" "^1.2.7"
+
 "@next/env@12.1.0":
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-12.1.0.tgz#73713399399b34aa5a01771fb73272b55b22c314"
@@ -138,6 +145,11 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
+
+"@stitches/core@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.7.tgz#9d421b0635ee2acd65a8f0c078d5f5be8fc81766"
+  integrity sha512-2bSto+jqPjeODcdNvwuXduhUH5b1bROmGNSBj/EVOGk8a8dIdCnoZyXYSxdKlKA9SnedBg94qNO0QQAMvTAz3w==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -1365,6 +1377,11 @@ react-dom@17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
+
+react-icons@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
+  integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
 react-is@^16.13.1:
   version "16.13.1"
