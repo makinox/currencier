@@ -4,8 +4,8 @@ import { NavbarSection } from './Navbar.styles';
 
 export default function Navbar() {
   return (
-    <header className={TopBar()}>
-      <nav className={`flex justify-between items-center ${FluidContainer()} ${NavbarSection()}`}>
+    <header className={`${TopBar({ isDark: false })} ${NavbarSection()}`}>
+      <nav className={`flex justify-between items-center ${FluidContainer()} `}>
         <div className="flex items-center">
           <span>Currencier</span>
         </div>
