@@ -1,4 +1,6 @@
 import { useMemo } from 'react';
+import { FluidContainer } from '@makinox/makinox-ui';
+
 import BlogsSkeleton from './Blogs.skeleton';
 
 export default function Blogs() {
@@ -13,7 +15,7 @@ export default function Blogs() {
   }, [data]);
 
   return (
-    <section className="flex justify-center flex-col items-center">
+    <section className={`flex justify-center flex-col items-center ${FluidContainer()}`}>
       <h3>Related blogs</h3>
       <div className="flex flex-wrap justify-center">{renderContent}</div>
     </section>

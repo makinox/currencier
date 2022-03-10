@@ -1,10 +1,12 @@
-import Image from 'next/image';
+import Coin from '../../Icon/Coin';
 
 export default function Hero() {
   return (
     <section className="flex justify-center items-center" style={{ backgroundColor: 'rgb(var(--light-primary))' }}>
-      <h1>Get the current information about your favorite currencies</h1>
-      <Image src="https://picsum.photos/id/1015/200/300" alt="Currency presentation image" width={300} height={200} />
+      <h1 className="text-center" style={{ maxWidth: 500, fontSize: 40, color: '#fff' }}>
+        Get the current information about your favorite currencies
+      </h1>
+      <Coin size={600} />
     </section>
   );
 }
