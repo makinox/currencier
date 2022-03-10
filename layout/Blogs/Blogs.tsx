@@ -1,12 +1,12 @@
 import useSWR from 'swr';
-import Image from 'next/image';
 import { useMemo } from 'react';
 import { Card, FluidContainer } from '@makinox/makinox-ui';
 
+import ArticleBlog from '../../components/ArticleBlog/ArticleBlog';
 import { NewsData } from '../../pages/api/news';
 import { fetcher } from '../../utils/fetcher';
-import BlogsSkeleton from './Blogs.skeleton';
 import { BlogsSection } from './Blogs.styles';
+import BlogsSkeleton from './Blogs.skeleton';
 
 export default function Blogs() {
   const mockData = Array(10).fill(0);
@@ -16,19 +16,7 @@ export default function Blogs() {
     if (error) return <p>failed to load</p>;
 
     if (data?.length) {
-      return data.map((el) => (
-        <article key={el.title} className={Card({ type: 'neumorphic', css: { maxWidth: 300 } })}>
-          <div className="card-media">
-            <Image src={el.image} width={300} height={200} alt={`Currencier: ${el.title}`} />
-          </div>
-          <div className="card-header">
-            <h6 className="headline6">{el.title}</h6>
-          </div>
-          <div className="card-body">
-            <p className="body2">{el.description}</p>
-          </div>
-        </article>
-      ));
+      return data.map((el) => <ArticleBlog key={el.title} blogData={el} />);
     }
 
     return mockData.map((_, i) => <BlogsSkeleton key={i} />);
