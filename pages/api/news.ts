@@ -19,7 +19,7 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse<Ar
       title: $(el).find('.abstract-content header a').text(),
       link: $(el).find('.abstract-content header a').attr('href'),
       description: $(el).find('.abstract-content .abstract-excerpt p').text(),
-      image: $(el).find('.abstract-figure img').attr('src'),
+      image: $(el).find('.abstract-figure picture source').attr('srcset'),
     });
   });
 

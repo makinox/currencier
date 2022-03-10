@@ -9,7 +9,7 @@ import BlogsSkeleton from './Blogs.skeleton';
 import { BlogsSection } from './Blogs.styles';
 
 export default function Blogs() {
-  const mockData = Array(5).fill(0);
+  const mockData = Array(6).fill(0);
   const { data, error } = useSWR<Array<NewsData>>('/api/news', fetcher);
 
   const renderContent = useMemo(() => {
@@ -17,9 +17,9 @@ export default function Blogs() {
 
     if (data?.length) {
       return data.map((el) => (
-        <article key={el.title} className={Card({ type: 'neumorphic', css: { maxWidth: 200 } })}>
+        <article key={el.title} className={Card({ type: 'neumorphic', css: { maxWidth: 300 } })}>
           <div className="card-media">
-            <Image src={el.image} width={200} height={200} alt={`Currencier: ${el.title}`} />
+            <Image src={el.image} width={300} height={200} alt={`Currencier: ${el.title}`} />
           </div>
           <div className="card-header">
             <h6 className="headline6">{el.title}</h6>
@@ -27,7 +27,6 @@ export default function Blogs() {
           <div className="card-body">
             <p className="body2">{el.description}</p>
           </div>
-          {/* <div className="card-bottom">{CardButtons.map((mapedButton) => mapedButton)}</div> */}
         </article>
       ));
     }
