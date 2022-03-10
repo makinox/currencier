@@ -1,12 +1,14 @@
 import ContentLoader, { IContentLoaderProps } from 'react-content-loader';
 
 export default function BlogsSkeleton({ props }: { props?: IContentLoaderProps }) {
+  const width = 300;
+  const height = 400;
+
   return (
-    <ContentLoader viewBox="0 0 500 420" height={420} width={500} {...props}>
-      <rect x="16" y="17" rx="0" ry="0" width="360" height="200" />
-      <circle cx="35" cy="248" r="20" />
-      <rect x="69" y="229" rx="2" ry="2" width="275" height="15" />
-      <rect x="69" y="253" rx="2" ry="2" width="140" height="15" />
+    <ContentLoader width={width} height={height} viewBox={`0 0 ${width} ${height}`} {...props}>
+      <rect x="0" y="240" rx="4" ry="4" width="280" height="65" />
+      <rect x="0" y="323" rx="3" ry="3" width="280" height="60" />
+      <rect x="0" y="15" rx="10" ry="10" width="280" height="200" />
     </ContentLoader>
   );
 }

@@ -9,7 +9,7 @@ import BlogsSkeleton from './Blogs.skeleton';
 import { BlogsSection } from './Blogs.styles';
 
 export default function Blogs() {
-  const mockData = Array(6).fill(0);
+  const mockData = Array(10).fill(0);
   const { data, error } = useSWR<Array<NewsData>>('/api/news', fetcher);
 
   const renderContent = useMemo(() => {
