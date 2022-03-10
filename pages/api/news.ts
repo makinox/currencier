@@ -1,18 +1,18 @@
 import * as cheerio from 'cheerio';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-type Data = {
+export type NewsData = {
   title: string;
   link: string;
   description: string;
   image: string;
 };
 
-export default async function handler(_: NextApiRequest, res: NextApiResponse<Array<Partial<Data>>>) {
+export default async function handler(_: NextApiRequest, res: NextApiResponse<Array<Partial<NewsData>>>) {
   const response = await fetch('https://www.xataka.com/');
   const html = await response.text();
   const $ = cheerio.load(html);
-  const articles: Array<Partial<Data>> = [];
+  const articles: Array<Partial<NewsData>> = [];
 
   $('.section-recent-list article').each((_, el) => {
     articles.push({
