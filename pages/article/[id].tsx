@@ -6,7 +6,6 @@ import ContentLoader from 'react-content-loader';
 import useSWR from 'swr';
 
 import { fetcher } from '../../utils/fetcher';
-import isBrowser from '../../utils/isBrowser';
 import { NewComplete } from '../api/news';
 
 export async function getServerSideProps({ query }: { query: any }) {
@@ -41,28 +40,43 @@ export default function Article({ query }: { query: any }) {
       </Head>
       <section>
         <div>
-          <Image
-            height={350}
-            width={1500}
-            layout="responsive"
-            objectFit="cover"
-            src={bigImage || 'https://picsum.photos/id/1011/1500/350'}
-            alt={`Currencier: ${title}`}
-          />
+          {bigImage ? (
+            <Image height={350} width={1500} layout="responsive" objectFit="cover" src={bigImage} alt={`Currencier: ${title}`} />
+          ) : (
+            <div className={`${FluidContainer()} flex justify-center`}>
+              <ContentLoader width={1500} height={350} viewBox={`0 0 ${1500} 350`}>
+                <rect x="0" y="0" width={1500} height="350" />
+              </ContentLoader>
+            </div>
+          )}
           {title ? (
             <h1 className={`text-center ${FluidContainer()}`}>{title}</h1>
           ) : (
-            <div className={FluidContainer()}>
-              <ContentLoader width={1200} height={100} viewBox={`0 0 ${1200} 40`} backgroundColor="#000">
-                <rect x="0" y="10" rx="10" ry="20" width={1200} height="20" />
+            <div className={`${FluidContainer()} flex justify-center`}>
+              <ContentLoader width={500} height={30} viewBox={`0 0 ${500} 30`}>
+                <rect x="0" y="10" rx="10" ry="20" width={500} height="20" />
               </ContentLoader>
             </div>
           )}
         </div>
-        {blogContent ? (
+        {blogContent?.length ? (
           <article className={`${FluidContainer()}`}>{blogContent}</article>
         ) : (
-          <article className={`${FluidContainer()}`}>blogContent</article>
+          <article className={`${FluidContainer()} flex justify-center`}>
+            <ContentLoader width={800} height={350} viewBox={`0 0 ${800} 350`}>
+              <rect x="0" y="10" rx="10" ry="20" width={600} height="20" />
+              <rect x="0" y="40" rx="10" ry="20" width={700} height="20" />
+              <rect x="0" y="70" rx="10" ry="20" width={600} height="20" />
+              <rect x="0" y="100" rx="10" ry="20" width={700} height="20" />
+              <rect x="0" y="130" rx="10" ry="20" width={600} height="20" />
+              <rect x="0" y="160" rx="10" ry="20" width={700} height="20" />
+              <rect x="0" y="190" rx="10" ry="20" width={650} height="20" />
+              <rect x="0" y="220" rx="10" ry="20" width={700} height="20" />
+              <rect x="0" y="250" rx="10" ry="20" width={650} height="20" />
+              <rect x="0" y="280" rx="10" ry="20" width={700} height="20" />
+              <rect x="0" y="310" rx="10" ry="20" width={300} height="20" />
+            </ContentLoader>
+          </article>
         )}
       </section>
     </>

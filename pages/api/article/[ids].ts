@@ -21,6 +21,9 @@ export default async function handleNewById(req: NextApiRequest, res: NextApiRes
     const imageList = $('.article-asset-big img')?.attr('srcset')?.split(',');
     if (imageList) {
       texts.add({ tag: 'img', text: imageList[imageList.length - 1].split(' ')[1] });
+    } else {
+      const secondImageList = $('.base-wrapper-image img')?.attr('srcset')?.split(',');
+      if (secondImageList) texts.add({ tag: 'img', text: secondImageList[secondImageList.length - 1].split(' ')[1] });
     }
   } catch (error) {
     console.error(error);
